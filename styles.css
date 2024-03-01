@@ -1,0 +1,58 @@
+/* Colors: 
+#90a3b4	(144,163,180)
+#567d9c	(86,125,156)
+#0f4162	(15,65,98)
+#09273a	(9,39,58)
+#1c2641	(28,38,65) */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #09273a;
+}
+
+#head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #567d9c;
+    margin-top: 40px;
+}
+
+.sub-head {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #90a3b4;
+    color: #09273a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#new-grid-btn:hover {
+    background-color: #567d9c;
+}
+
+#sketch-area {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+    margin: 100px auto;
+    margin-top: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+}
+
+.cell {
+    border: 1px solid whitesmoke;
+}
