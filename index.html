@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 </head>
 <body>
     <div id="head">
         <h1>Etch-a-Sketch</h1>
         <div class="sub-head">
-            <button id="new-grid-btn">New Grid</button>
-            <button id="clear-btn">Clear</button>
-            <button id="random-rgb-btn">Random</button>
+            <button id="new-grid-btn" class="material-symbols-outlined">grid_on</button>
+            <button id="clear-btn" class="material-symbols-outlined">ink_eraser</button>
+            <button id="random-rgb-btn" class="material-symbols-outlined">palette</button>
         </div>
     </div>
     <div id="sketch-area" class="container"></div>
+    <div id="slider-container">
+        <input type="range" min="1" max="100" value="16" class="slider" id="slider">
+        <p id="slider-value"></p>
+    </div>
 
 
     <script src="script.js"></script>

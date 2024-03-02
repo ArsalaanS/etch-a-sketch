@@ -11,6 +11,11 @@ const newGridBtn = document.getElementById("new-grid-btn");
 const clearBtn = document.getElementById("clear-btn");
 const randomColorBtn = document.getElementById("random-rgb-btn");
 
+const sliderContainer = document.querySelector("#slider-container");
+const slider = document.querySelector("#slider");
+const sliderValue = document.querySelector("#slider-value");
+sliderValue.textContent = `${slider.value} x ${slider.value} (Resolution)`;
+
 newGridBtn.addEventListener("click", () => {
     const squaresPerSide = prompt("Enter the number of squares per side: (1-100) ");
     if (squaresPerSide <= 100 && squaresPerSide >= 1) {
@@ -27,13 +32,14 @@ clearBtn.addEventListener("click", () => {
 randomColorBtn.addEventListener("click", () => {
     const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => {
-        if (isMouseDown){
+        if (cell.style.backgroundColor === "black"){
             changeColor(cell);
         } 
     });
 });
 
 function createGridCells() {
+
     for (let i = 0; i < (rows * cols); i++) {
         const gridCell = document.createElement("div");
         gridCell.style.width = `${(GRIDSIDE / cols) - 2}px`;
@@ -82,6 +88,12 @@ function changeColor(cell) {
     const green = Math.floor(Math.random() * 256);
     const blue = Math.floor(Math.random() * 256);
     cell.style.backgroundColor = `rgb(${red},${green},${blue})`;
+}
+
+slider.oninput = function(){
+    let txt = `${this.value} x ${this.value} (Resolution)`;
+    sliderValue.innerHTML = txt;
+    resetGrid(this.value);
 }
 
 createGridCells();
